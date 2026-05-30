@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Asphalt Machinery Repair | Addis Ababa</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1e1e2f;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* color palette: industrial orange + charcoal */
+    :root {
+      --primary: #e05a1a;
+      --primary-dark: #c2450b;
+      --secondary: #2c2c38;
+      --dark-bg: #121212;
+      --gray-light: #f4f6fa;
+      --gray-mid: #e9edf2;
+      --text-dark: #1f2937;
+      --text-soft: #4b5563;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / navbar */
+    .navbar {
+      background: #ffffff;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #eef2f5;
+    }
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo h1 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #e05a1a, #c2450b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .logo span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #4b5563;
+      display: block;
+      letter-spacing: 0.2px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2d3e50;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary);
+    }
+    .btn-outline {
+      border: 2px solid var(--primary);
+      background: transparent;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: var(--primary);
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* buttons */
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-block;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(224,90,26,0.25);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-secondary:hover {
+      background: white;
+      color: var(--primary);
+      border-color: white;
+    }
+
+    /* hero section */
+    .hero {
+      background: linear-gradient(105deg, #0b0c15 0%, #1a1c28 100%), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&auto=format');
+      background-blend-mode: overlay;
+      background-size: cover;
+      background-position: center 30%;
+      padding: 5rem 0 6rem;
+      position: relative;
+    }
+    .hero .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 750px;
+    }
+    .hero h2 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: white;
+      line-height: 1.2;
+    }
+    .hero p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+    .hero-badge {
+      background: rgba(224,90,26,0.25);
+      backdrop-filter: blur(4px);
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 60px;
+      color: #ffb185;
+      font-weight: 500;
+      font-size: 0.85rem;
+      width: fit-content;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    /* sections general */
+    section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+    .section-subtitle {
+      color: var(--text-soft);
+      max-width: 700px;
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+    .bg-light {
+      background-color: var(--gray-light);
+    }
+
+    /* services grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+    }
+    .service-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 1.8rem;
+      transition: 0.25s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #eef2f8;
+      text-align: center;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+    }
+    .service-icon {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .service-card p {
+      color: var(--text-soft);
+    }
+
+    /* founders row */
+    .founders-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .founder-card {
+      background: white;
+      border-radius: 28px;
+      padding: 2rem;
+      flex: 1 1 280px;
+      text-align: center;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+      border: 1px solid var(--gray-mid);
+      transition: all 0.2s;
+    }
+    .founder-card i {
+      font-size: 3.5rem;
+      color: var(--primary);
+      background: #fff1e6;
+      padding: 1rem;
+      border-radius: 60px;
+    }
+    .founder-card h4 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin: 0.8rem 0 0.3rem;
+    }
+    .founder-title {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .founder-bio {
+      color: var(--text-soft);
+    }
+
+    /* about highlight */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-stats {
+      background: white;
+      border-radius: 28px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+    .stat-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      align-items: center;
+    }
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      min-width: 70px;
+    }
+
+    /* contact + map */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .contact-info {
+      background: white;
+      padding: 2rem;
+      border-radius: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .contact-detail i {
+      width: 40px;
+      height: 40px;
+      background: #fff0e7;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 40px;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+    .contact-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      font-family: inherit;
+      transition: 0.2s;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(224,90,26,0.1);
+    }
+    .map-placeholder {
+      background: #1f2a3e;
+      border-radius: 24px;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background: #0f1117;
+      color: #b9c2d0;
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .nav-wrapper {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 1.2rem;
+      }
+      .section-title {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-wrapper">
+      <div class="logo">
+        <h1>ASPHALT MACHINERY REPAIR</h1>
+        <span>⚙️ Precision • Power • Reliability</span>
+      </div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn-outline">Request Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-badge"><i class="fas fa-wrench"></i>  Ethiopia’s trusted asphalt repair experts</div>
+        <h2>Keep your asphalt fleet running <span style="color:#ff9f60;">like new</span></h2>
+        <p>Specialized repair & maintenance for pavers, rollers, compactors, and asphalt plants. Based in Addis Ababa — serving Ethiopia’s construction sector.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary"><i class="fas fa-phone-alt"></i>  Get in touch</a>
+          <a href="#services" class="btn-secondary">Explore Services</a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.7);"><i class="fas fa-map-marker-alt"></i>  Addis Ababa, Bole Subcity • Emergency mobile service</p>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <div class="section-title">Comprehensive machinery repair <br>for asphalt industry</div>
+        <div class="section-subtitle">From diagnosis to complete overhaul — our team ensures minimum downtime and maximum productivity.</div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-road"></i></div>
+            <h3>Asphalt Pavers</h3>
+            <p>Screed adjustments, conveyor systems, auger repairs, and full paver calibration.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-truck-ramp-box"></i></div>
+            <h3>Rollers & Compactors</h3>
+            <p>Vibration systems, drum repair, hydraulic troubleshooting & engine diagnostics.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-industry"></i></div>
+            <h3>Asphalt Plants</h3>
+            <p>Burner tuning, conveyor belts, screens, and control system upgrades.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-bolt"></i></div>
+            <h3>Electrical & Hydraulic</h3>
+            <p>Full electrical diagnostics, sensor replacement, hydraulic cylinder rebuilding.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-tools"></i></div>
+            <h3>Preventive Maintenance</h3>
+            <p>Scheduled maintenance plans to avoid costly breakdowns and extend lifespan.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-clock"></i></div>
+            <h3>On‑site Field Service</h3>
+            <p>Mobile workshop units — we come to your project site anywhere in Addis & beyond.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founders + About combined section -->
+    <section id="about" class="bg-light">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <div class="section-title" style="margin-bottom: 0.5rem;">Meet the founders</div>
+            <div class="section-subtitle" style="margin-bottom: 1.5rem;">Two engineers with a shared vision for excellence</div>
+            <div class="founders-row">
+              <div class="founder-card">
+                <i class="fas fa-user-astronaut"></i>
+                <h4>Tadiyos</h4>
+                <div class="founder-title">Lead Technical Director</div>
+                <p class="founder-bio">8+ years in heavy equipment repair, certified hydraulic specialist. Tadiyos ensures every machine meets factory specs and delivers peak performance.</p>
+              </div>
+              <div class="founder-card">
+                <i class="fas fa-chalkboard-user"></i>
+                <h4>Bekri</h4>
+                <div class="founder-title">Operations & Strategy</div>
+                <p class="founder-bio">Former fleet manager with deep expertise in asphalt logistics. Bekri leads quality control and rapid on-site response across Addis Ababa.</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-stats">
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Why Asphalt Machinery Repair?</h3>
+            <div class="stat-item">
+              <div class="stat-number">500+</div>
+              <div>Machines repaired since 2018</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">98%</div>
+              <div>Customer satisfaction rate</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div>Emergency field support in Addis</div>
+            </div>
+            <p style="margin-top: 1rem;">Trusted by major road contractors in Ethiopia. We combine genuine spare parts sourcing with modern diagnostic tools.</p>
+            <p style="margin-top: 1rem;"><i class="fas fa-check-circle" style="color: #e05a1a;"></i>  Founded and managed by Tadiyos & Bekri — your partners in productivity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose us / core advantages -->
+    <section style="padding: 3rem 0 2rem;">
+      <div class="container">
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: center;">
+          <div style="flex: 1;">
+            <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: var(--primary);"></i>
+            <h3 style="margin: 0.8rem 0 0.5rem;">Warranty on all repairs</h3>
+            <p>We stand behind every job — parts and labor warranty for your peace of mind.</p>
+          </div>
+          <div style="flex: 1;">
+            <i class="fas fa-tachometer-alt" style="font-size: 2.5rem; color: var(--primary);"></i>
+            <h3 style="margin: 0.8rem 0 0.5rem;">Fast turnaround</h3>
+            <p>Minimized downtime with priority service for pavers and rollers.</p>
+          </div>
+          <div style="flex: 1;">
+            <i class="fas fa-microchip" style="font-size: 2.5rem; color: var(--primary);"></i>
+            <h3 style="margin: 0.8rem 0 0.5rem;">Advanced diagnostics</h3>
+            <p>Modern scanner tools & OEM software for accurate troubleshooting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="bg-light">
+      <div class="container">
+        <div class="section-title">Let’s talk about your machinery</div>
+        <div class="section-subtitle">Reach out for a free consultation, emergency repair, or scheduled maintenance. We're ready to assist.</div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3><i class="fas fa-map-pin"></i>  Addis Ababa base</h3>
+            <div class="contact-detail">
+              <i class="fas fa-location-dot"></i>
+              <div>Biheretsige Maryam, near Biheretsige Menafesha<br>Addis Ababa, Ethiopia</div>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>+251 911 877 989 <br> +251 911 174 120</div>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-envelope"></i>
+              <div>repair@asphaltmachinery.addis<br>info@amrethiopia.com</div>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-clock"></i>
+              <div>Mon - Fri: 8:00 AM – 6:00 PM <br> Saturday: 9:00 AM – 2:00 PM <br> Sunday & Holiday: Emergency only</div>
+            </div>
+            <div class="map-placeholder">
+              <i class="fas fa-map-marked-alt" style="font-size: 2rem; margin-bottom: 10px;"></i>
+              <p><strong>Serving Greater Addis Ababa</strong><br>Quick response within city limits</p>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send inquiry directly to Tadiyos & Bekri</h3>
+            <form id="inquiryForm">
+              <div class="form-group">
+                <input type="text" id="fullName" placeholder="Full name" required>
+              </div>
+              <div class="form-group">
+                <input type="tel" id="phone" placeholder="Phone number" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" placeholder="Email address" required>
+              </div>
+              <div class="form-group">
+                <textarea rows="4" id="message" placeholder="Tell us about your machinery issue or request... (paver model, roller, plant issue)" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary" style="width: 100%;"><i class="fas fa-paper-plane"></i>  Send Message</button>
+              <p style="font-size: 0.75rem; margin-top: 1rem; text-align: center; color:#6c757d;">We’ll get back within 2 business hours (emergency same-day)</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Asphalt Machinery Repair – Engineered by Tadiyos & Bekri | Addis Ababa, Ethiopia</p>
+      <p style="margin-top: 0.8rem; font-size: 0.85rem;"><i class="fas fa-hard-hat"></i>  Reliable repairs for pavers, rollers, asphalt plants & heavy construction equipment. </p>
+    </div>
+  </footer>
+
+  <script>
+    // smooth navigation and active link highlight
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if(targetId && targetId.startsWith('#') && targetId !== '#') {
+          e.preventDefault();
+          const targetElement = document.querySelector(targetId);
+          if(targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+        // update active class
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // Handle contact form (frontend demo)
+    const form = document.getElementById('inquiryForm');
+    if(form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('fullName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const msg = document.getElementById('message').value.trim();
+
+        if(!name || !phone || !email || !msg) {
+          alert('Please fill in all fields before sending.');
+          return;
+        }
+        if(!email.includes('@') || !email.includes('.')) {
+          alert('Please enter a valid email address.');
+          return;
+        }
+
+        // simulate sending message
+        alert(`✅ Thank you ${name}! \n\nTadiyos & Bekri have received your inquiry regarding: "${msg.substring(0, 80)}..." \nWe will contact you via ${phone} or ${email} within a few hours.`);
+        form.reset();
+      });
+    }
+
+    // highlight active section on scroll (optional)
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const scrollPos = window.scrollY + 120;
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if(scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href').substring(1);
+        if(href === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
